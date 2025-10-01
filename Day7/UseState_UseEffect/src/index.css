@@ -1,0 +1,29 @@
+button{
+    height: 40px;
+    width: 100px;
+    font-size: larger;
+    text-align: center;
+    padding: 10px;
+    background-color: aqua;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+#counter-para{
+    height: 60px;
+    width: 60px;
+    font-size: 50px;
+    text-align: center;
+    padding: 10px;
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+#container{
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
