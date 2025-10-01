@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Card1 from './components/Card1'
 import { useEffect } from 'react'
+import FetchUsers from './components/FetchUsers';
 
 
 // first contains the side effect function
@@ -81,6 +82,8 @@ const App = () => {
         <button onClick={increase}>Increase</button>
         <button onClick={decrease}>Decrease</button>
       </div>
+
+      <FetchUsers/>
       
     </div>
   )
