@@ -11,11 +11,13 @@ const TaskList = ({ tasks , setTasks }:TaskListProps) => {
     }
 
   return (
-    <div className='mt-6 text-gray-200 text-3xl'>
+    <div className='mt-6 w-[38%]'>
       {
+        
+
         tasks.map((task,index) => (
             
-            <Task key={index} index = {index} title = {task} deleteTask={deleteTask}/>
+            <Task key={index} index = {index} title = {task} deleteTask={deleteTask} setTasks = {setTasks}/>
             
         ))
       }

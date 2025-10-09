@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { FiPlusSquare } from 'react-icons/fi';
 
 type InputFormProps = {
     tasks:string[];
@@ -27,17 +28,18 @@ const InputForm = ({ tasks , setTasks }:InputFormProps) => {
     }
 
   return (
-    <div>
-        <h2 className='text-4xl text-gray-200 text-center mb-8'>
-            Today's Tasks to Complete
+    <div className='w-[38%]'>
+        <h2 className='text-[1.6rem] text-gray-700 text-center mt-17 mb-4 font-semibold'>
+            To-Do List
         </h2>
 
-        <form className='flex justify-around items-center'>
+        <form className='flex justify-center items-center gap-2'>
 
             <input
-                className='text-xl p-4 border-2 border-amber-800 rounded-xl focus:bg-slate-800 text-gray-200'
+                id='input'
+                className='text-lg p-1 border-2 border-gray-600 rounded-xl text-gray-700 flex-1 placeholder-gray-600 pl-4'
                 type='text' 
-                placeholder='Enter Tasks to Add...'  
+                placeholder='Add Task'  
                 value={inputValue} 
                 onChange={handleChange}
                 required
@@ -45,10 +47,10 @@ const InputForm = ({ tasks , setTasks }:InputFormProps) => {
 
             <button
             type='button'
-            className='px-3 py-2 bg-blue-500 rounded-md text-gray-200 text-xl'
+            className='p-2 bg-gray-600 rounded-xl text-gray-200 text-lg '
             onClick={(e) => addTask(e)}
             >
-                Add Task
+                <FiPlusSquare/>
             </button>    
 
         </form>
