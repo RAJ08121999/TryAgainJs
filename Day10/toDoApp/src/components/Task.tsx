@@ -14,7 +14,7 @@ const Task = ({title , index , deleteTask , setTasks }:TaskProps) => {
     
     const [ completed , setCompleted ] = useState(false);
 
-    const [ isClicked , setIsClicked ] = useState(false);
+    const [ isEditBtnClicked , setIsEditBtnClicked ] = useState(false);
 
     const [ newValue , setNewValue ] = useState(title);
 
@@ -27,7 +27,7 @@ const Task = ({title , index , deleteTask , setTasks }:TaskProps) => {
       e.preventDefault();
       if(!newValue.trim()) return;
       setTasks(prev => prev.map((task , i )=> i === index ? newValue:task));
-      setIsClicked(false)
+      setIsEditBtnClicked(false)
     }
 
     const toggleCompleted = () => setCompleted(prev => !prev);
@@ -38,7 +38,7 @@ const Task = ({title , index , deleteTask , setTasks }:TaskProps) => {
     >   
       {
       
-        isClicked
+        isEditBtnClicked
          ? (
 
           <div className='flex items-center justify-between'>
@@ -99,7 +99,7 @@ const Task = ({title , index , deleteTask , setTasks }:TaskProps) => {
             <div className='flex justify-center items-center gap-3'>
               
               <button
-              onClick={()=> setIsClicked(true)}
+              onClick={()=> setIsEditBtnClicked(true)}
               >
                 <FaPenToSquare
                 className='text-gray-400'/>

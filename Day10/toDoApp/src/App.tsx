@@ -8,7 +8,7 @@ const App = () => {
   const [ tasks , setTasks ] = useState<string[]>([]);
 
   return (
-    <div className='flex flex-col justify-around items-center'>
+    <div className='flex flex-col justify-center items-center'>
       <InputForm tasks = {tasks} setTasks = {setTasks}/>
       <TaskList tasks = {tasks} setTasks = {setTasks}/>
       <Footer/>
