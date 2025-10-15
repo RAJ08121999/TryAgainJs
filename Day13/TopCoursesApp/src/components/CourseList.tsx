@@ -3,9 +3,8 @@ import Course from "./Course";
 
 
 type CourseListProps = {
-    courses:Record<string,CourseItem[]>;
+    courses:Record<string,CourseItem[]|null>;
     category:string;
-    setCategory : React.Dispatch<React.SetStateAction<string>>;
 }
 
 const CourseList:React.FC<CourseListProps> = ({courses , category}) => {  
@@ -14,14 +13,14 @@ const CourseList:React.FC<CourseListProps> = ({courses , category}) => {
       if(category == "All"){
         const newArray:CourseItem[] = [];
         Object.values(courses).forEach((courseArray)=>{
-            courseArray.forEach((course:CourseItem)=>{
+            courseArray?.forEach((course:CourseItem)=>{
                 newArray.push(course)
             });
         });
         return newArray;
       }
       else{
-        return courses[category];
+        return courses[category]??[];
       }
     }
 

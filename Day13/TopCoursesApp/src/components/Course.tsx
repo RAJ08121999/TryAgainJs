@@ -15,7 +15,7 @@ const Course:React.FC<CourseProps> = ({course}) => {
         
         <div className="font-bold text-xl text-gray-200 text-center ">
           
-          {course.title.length>20? course.title.substring(0,22)+"...":""}
+          {course.title.length>10? course.title.substring(0,22)+"...":""}
 
         </div>
 
